@@ -3,18 +3,27 @@ import { EmailIcon,
          QuestionIcon,
          Search2Icon,
          SettingsIcon } from '@chakra-ui/icons';
-import { Icon, Flex, Box } from '@chakra-ui/react';
+import { Icon, Flex } from '@chakra-ui/react';
 import { BiHome } from "react-icons/bi";
 import React from 'react'
+import Link from 'next/link';
 
 const SideBar = () => {
     return (
         <div className ="fixed top-0 left-0 h-screen w-16 m-0
                         flex flex-col
                         bg-gray-900 text-white shadow-lg">
-            <SideBarIcon icon = {<Icon  as = {BiHome} boxSize={28}/>} text="Home"/>
+            <Link href="/">
+                <a>
+                    <SideBarIcon icon = {<Icon  as = {BiHome} boxSize={28}/>} text="Home"/>
+                </a>
+            </Link>
             <hr  className ="self-center w-12 border-gray-600"/>
-            <SideBarIcon icon = {<EmailIcon boxSize={28}/>} text="Messages"/>
+            <Link href="/messages">
+                <a>
+                    <SideBarIcon icon = {<EmailIcon boxSize={28}/>} text="Messages"/>
+                </a>
+            </Link>
             <SideBarIcon icon = {<QuestionIcon boxSize={28}/>} text="Help"/>
             <SideBarIcon icon = {<Search2Icon boxSize={28}/>} text="Search"/>
             <SideBarIcon icon = {<MoonIcon boxSize={28}/>} text="Moon"/>
